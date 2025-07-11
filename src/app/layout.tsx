@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./utils/providers/ThemeProvider";
+import { I18nProvider } from "./utils/providers/I18nProvider";
 
 export const metadata: Metadata = {
-  title: "Mortnon Web Framework",
-  description: "Mortnon Web Framework Project",
+  title: "Truss Web Framework",
+  description: "Truss Web Framework Project",
 };
 
 export default function RootLayout({
@@ -16,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <I18nProvider>
+          <ThemeProvider>{children}</ThemeProvider>
+        </I18nProvider>
       </body>
     </html>
   );

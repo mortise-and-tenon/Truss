@@ -1,12 +1,21 @@
 "use client";
 
 import { createContext, useEffect, useState } from "react";
-import { Env_LoginFormPosition } from "../Util";
+import {
+  Env_HeaderLogo,
+  Env_HeaderTitle,
+  Env_LoginFormPosition,
+  Env_ProjectName,
+} from "../envUtils";
 
 export type LoginFormPositionType = "RIGHT" | "CENTER";
 
 export type CustomConfig = {
   loginFormPosition: LoginFormPositionType;
+  header: {
+    logo: string;
+    title: string;
+  };
 };
 
 type ThemeType = {
@@ -15,19 +24,24 @@ type ThemeType = {
   toggleTheme: () => void;
 };
 
+const defaultCustomConfig: CustomConfig = {
+  loginFormPosition: "RIGHT",
+  header: {
+    logo: "/truss.png",
+    title: "Truss Web",
+  },
+};
+
 export const ThemeContext = createContext<ThemeType>({
   theme: "light",
-  customConfig: {
-    loginFormPosition: "RIGHT",
-  },
+  customConfig: defaultCustomConfig,
   toggleTheme: () => {},
 });
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [theme, setTheme] = useState("light");
-  const [customConfig, setCustomConfig] = useState<CustomConfig>({
-    loginFormPosition: "RIGHT",
-  });
+  const [customConfig, setCustomConfig] =
+    useState<CustomConfig>(defaultCustomConfig);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -43,6 +57,10 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
     setCustomConfig({
       loginFormPosition: Env_LoginFormPosition,
+      header: {
+        logo: Env_HeaderLogo,
+        title: Env_ProjectName,
+      },
     });
   }, []);
 
