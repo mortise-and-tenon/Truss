@@ -1,3 +1,13 @@
 {
-    "copyright":"Copyright"
+  "corp_name": "Truss Web",
+  "copyright": "Copyright",
+  "login": {
+    "title": "Welcome Back",
+    "subtitle": "Please log in to continue your visit",
+    "username_placeholder": "username or Email",
+    "password_placeholder": "password",
+    "auto_login": "Auto Login",
+    "forget_password": "Forgotten password",
+    "submit": "Login"
+  }
 }

@@ -1,3 +1,13 @@
 {
-    "copyright":"版权所有"
+  "corp_name": "Truss Web",
+  "copyright": "版权所有",
+  "login": {
+    "title": "欢迎回来",
+    "subtitle": "请登录以继续访问",
+    "username_placeholder": "用户名或邮箱",
+    "password_placeholder": "密码",
+    "auto_login": "自动登录",
+    "forget_password": "忘记密码",
+    "submit": "登录"
+  }
 }

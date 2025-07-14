@@ -10,6 +10,6 @@ export default function Footer() {
   return (
     <div className="h-12 flex justify-center items-center text-white text-base">{`${i18n(
       "copyright"
-    )} © ${new Date().getFullYear()} Truss Web.`}</div>
+    )} © ${new Date().getFullYear()} ${i18n("corp_name")}`}</div>
   );
 }
