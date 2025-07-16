@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./utils/providers/ThemeProvider";
 import { I18nProvider } from "./utils/providers/I18nProvider";
+import { NextIntlClientProvider } from "next-intl";
 
 export const metadata: Metadata = {
   title: "Truss Web Framework",
@@ -17,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        <I18nProvider>
-          <ThemeProvider>{children}</ThemeProvider>
-        </I18nProvider>
+        <NextIntlClientProvider>
+          <I18nProvider>
+            <ThemeProvider>{children}</ThemeProvider>
+          </I18nProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

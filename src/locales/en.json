@@ -1,13 +1,19 @@
 {
+  "locales": {
+    "zh": "中文",
+    "en": "English"
+  },
   "corp_name": "Truss Web",
   "copyright": "Copyright",
   "login": {
     "title": "Welcome Back",
-    "subtitle": "Please log in to continue your visit",
+    "subtitle": "Please sign in to continue your visit",
     "username_placeholder": "username or Email",
     "password_placeholder": "password",
+    "phone_placeholder": "phone number",
+    "code_placeholder": "code",
     "auto_login": "Auto Login",
-    "forget_password": "Forgotten password",
+    "forget_password": "Forgot Password?",
     "submit": "Login"
   }
 }

@@ -25,6 +25,8 @@ import {
   useState,
 } from "react";
 
+import Cookies from "js-cookie";
+
 type I18nContextType = {
   locale: string;
   setLocale: Dispatch<SetStateAction<string>>;
@@ -50,7 +52,7 @@ export const I18nContext = createContext<I18nContextType>({
 });
 
 export const I18nProvider = ({ children }: { children: React.ReactNode }) => {
-  const [locale, setLocale] = useState("zh");
+  const [locale, setLocale] = useState("");
   const [translation, setTranslation] = useState<Translations>({});
 
   //用于客户端组件获取国际化文字的函数
@@ -96,7 +98,18 @@ export const I18nProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   useEffect(() => {
-    loadI18nData();
+    const userLocale = Cookies.get("locale");
+    if (userLocale) {
+      setLocale(userLocale);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (locale != "") {
+      loadI18nData();
+    }
+    //保存选择的语言到 Cookie
+    Cookies.set("locale", locale);
   }, [locale]);
 
   return (

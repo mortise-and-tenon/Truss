@@ -1,4 +1,8 @@
 {
+  "locales": {
+    "zh": "中文",
+    "en": "English"
+  },
   "corp_name": "Truss Web",
   "copyright": "版权所有",
   "login": {
@@ -6,6 +10,8 @@
     "subtitle": "请登录以继续访问",
     "username_placeholder": "用户名或邮箱",
     "password_placeholder": "密码",
+    "phone_placeholder": "手机号",
+    "code_placeholder": "验证码",
     "auto_login": "自动登录",
     "forget_password": "忘记密码",
     "submit": "登录"
