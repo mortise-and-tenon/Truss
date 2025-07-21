@@ -13,7 +13,7 @@ export default function Home() {
       <div
         className={`flex-1 flex items-center ${
           customConfig.loginFormPosition === "RIGHT"
-            ? "justify-end pr-16"
+            ? "justify-center lg:justify-end lg:pr-16"
             : "justify-center"
         }`}
       >

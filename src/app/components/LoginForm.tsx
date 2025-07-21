@@ -23,7 +23,7 @@ export default function LoginForm() {
           name="my_tabs_2"
           className="tab"
           defaultChecked
-          aria-label="账号密码登录"
+          aria-label={translate("account_tab")}
         />
         <div className="tab-content p-4">
           <div className="flex justify-center w-full">
@@ -61,7 +61,7 @@ export default function LoginForm() {
           type="radio"
           name="my_tabs_2"
           className="tab"
-          aria-label="手机号登录"
+          aria-label={translate("phone_tab")}
         />
         <div className="tab-content p-4">
           <div className="flex justify-center w-full">

@@ -8,6 +8,8 @@
   "login": {
     "title": "Welcome Back",
     "subtitle": "Please sign in to continue your visit",
+    "account_tab": "Username/Email",
+    "phone_tab": "Phone Code",
     "username_placeholder": "username or Email",
     "password_placeholder": "password",
     "phone_placeholder": "phone number",
